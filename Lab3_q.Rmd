@@ -1,0 +1,111 @@
+---
+title: "MATH219 Lab4"
+author: "Leanne Dong"
+subtitle: "Simulation, Discrete distribution"
+date: "18/08/2018"
+output:
+  html_document:
+    fig_caption: yes
+    number_sections: yes
+    self_contained: yes
+    theme: flatly
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: hide
+---
+
+# Simulation (by hand)
+
+Q1: Attempt the questions leftover from Lecture 3 extra exercises on simulation.
+
+# Simulation (in R)
+
+## Example: Tossing a coin
+
+As you already seen, the theoretical probability of getting a head or tail on a coin toss is both 0.5. Now Let us use R to simulate an experiment of flipping a coin a number of times and compare our results with the theoretical probability. First let fix the convention:
+
+**0=Tail and 1=Heads**
+
+We can use the following command to ask R to flip a coin 10 times:
+
+```{r}
+sample(0:1,10,rep=T)
+```
+This gives 4 tails and 6 head. In fact we can write a function to flip a coin $n$ times:
+
+```{r}
+FlipCoin=function(n) sample(0:1,n,rep=T)
+e1=FlipCoin(50)
+e1
+```
+Now we can use the sum command to compare the results from this experiement to the theoretical probabilities. For instance, in the above experiment of flipping a coin 50 times, we can count the heads and tails as
+
+```{r}
+sum(e1==0)
+sum(e1==0)/50
+sum(e1==1)
+sum(e1==1)/50
+```
+This gives us 24 tails and 26 heads. The "probability" of relative frequency of a Tail in this experiment is 0.48 and a Head is 0.52. (Note, you may get different answers from mine. Think why!)
+Let us now plot a relative histogram:
+```{r}
+hist(e1,breaks=c(-0.5,0.5,1.5),prob=T)
+```
+
+## Rolling dice
+
+The probability of getting a number between 1 to 6 on a roll of a die is 1/6 = 0.1666667. As above we can use **R** to simulate an experiment of rolling a die a number of times and compare our results with the theoretical probability. Let us now tell R to roll a die 30 times:
+
+```{r}
+sample(1:6,30,rep=T)
+```
+As before one can write a function to roll a die $n$ times:
+
+```{r}
+RollDie=function(n) sample(1:6,rep=T)
+d1=RollDie(50)
+d1
+```
+Now use the `sum` command to compare the results from this experiment to the theoretical probabilities. For instance, in the above experiment the number of 4's and its relative frequency is:
+
+```{r}
+sum(d1==2)
+sum(d1==2)/50
+```
+
+The number 2 occurs 8 times and its relative frequency is 0.04 which is far away 1/6. Note that you may get different answers. We can plot a relative histogram using the command:
+
+```{r}
+hist(d1,breaks=c(0.5,1.5,2.5,3.5,4.5,5.5,6.5), prob=T)
+```
+
+## Questions
+
+1. Use R to simulate an experiment of rolling a die 100 times. Print the relative histogram and write your name on it.
+
+2. Use R to roll a die 1000 times. (Do not print histogram)
+
+# Review of Discrete Random variables
+
+For any discrete random variable $X$,
+
+\[\{x,\,\mathbb{P}(X=x)\}\,\,\text{Probability distribution}\]
+
+\[\mathbb{E}(X)=\sum_x x\mathbb{P}(X=x)\,\,\text{Expected value of mean}\]
+
+\[\mathbb{E}(f(X))=\sum_x f(x)\mathbb{P}(X=x)\,\,\text{Expected value of function}\]
+
+\[\text{Var}(X)=\mathbb{E}X^2-(\mathbb{E}X)^2\]
+
+## Combinatorial coefficients
+
+\[{N\choose n}=\frac{N!}{n!(N-n)!},\quad \text{where}\,\,N!=N(N-1)(N-2)\cdots 1\]
+
+## Hypergeometric Distribution
+
+\[\mathbb{P}(\text{Select }n_i\,\,\text{balls of each type }i)=\mathbb{P}(X_1=n_1,\cdots,X_r=n_r;N,n,N_1,\cdots,N_r)=\frac{{N_1\choose n_1}{N_2\choose n_2}\cdots {N_r\choose n_r}}{{N\choose n}}\]
+where $N=\sum^r_{i=1}N_i$ and $n=\sum^r_{i=1}n_i$.
+
+
+

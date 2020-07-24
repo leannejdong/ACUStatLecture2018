@@ -1,0 +1,22 @@
+Field,Text
+Indicator,2.01 - Low birth weight of term babies
+Indicator full name,2.01 - % of all live births at term with low birth weight
+Definition,Live births with a recorded birth weight under 2500g and a gestational age of at least 37 complete weeks as a percentage of all live births with recorded birth weight and a gestational age of at least 37 complete weeks.
+Rationale,"Low birth weight increases the risk of childhood mortality and of developmental problems for the child and is associated with poorer health in later life. At a population level there are inequalities in low birth weight and a high proportion of low birth weight births could indicate lifestyle issues of the mothers and/or issues with the maternity services.
+This indicator is in line with the Government's direction for public health on starting well through early intervention and prevention. It has also been included in the Department of Health Business Plan within the context of addressing issues of premature mortality, avoidable ill health, and inequalities in health, particularly in relation to child poverty (see indicator 1.01)."
+Data source,Office for National Statistics
+Indicator production,Public Health England National Child and Maternal Health Intelligence Network
+Indicator source,"ONS publishes data at national level, in the context of infant mortality. Local authority level data are available on request from cim@ons.gsi.gov.uk."
+Methodology,Low birth weight full term live births as a percentage of all full term live births. Births without a recorded birth weight are excluded.
+Source of numerator,Office for National Statistics
+Definition of numerator,Number of live births at term (>= 37 gestation weeks) with low birth weight (<2500g)
+Source of denominator,Office for National Statistics
+Definition of denominator,Number of live births at term (>= 37 weeks) with recorded birth weight
+Disclosure control,2005-2006: Small numbers (2007 to 2014 small numbers (
+Caveats,"ONS has linked birth registrations with NHS birth notification records to allow reporting by gestational age and birth weight. With 99.4% of records linked successfully, completeness of this dataset is very good. However, not all births are recorded with a valid birth weight and gestational age. There may be regional variations in the completeness of these fields."
+Copyright,Office for National Statistics
+Indicator number,2.01
+Frequency,Annual
+Unit,%
+Value type,Proportion
+Year type,Calendar
